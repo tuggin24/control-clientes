@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-configuracion',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./configuracion.component.css']
 })
 export class ConfiguracionComponent implements OnInit {
-
-  constructor() { }
+  
+  permitirRegistro = false;
+  constructor(
+    private router: Router,
+    
+  ) { }
 
   ngOnInit(): void {
   }
+  
+  guardar(){
 
+  }
 }
