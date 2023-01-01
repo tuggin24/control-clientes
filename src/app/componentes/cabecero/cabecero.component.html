@@ -24,19 +24,19 @@
                     </a>
                 </div>
             </li>
-            <li *ngIf="!isLoggedIn" class="nav-item">
+            <li *ngIf="!isLoggedIn && permitirRegistro" class="nav-item">
                 <a routerLink="/login" class="nav-link" routerLinkActive="router-link-activate">
                     <i class="fa-solid fa-right-to-bracket"></i> Login
                 </a>
             </li>
-            <li *ngIf="!isLoggedIn" class="nav-item">
+            <li *ngIf="!isLoggedIn && permitirRegistro" class="nav-item">
                 <a routerLink="/registrarse" class="nav-link" routerLinkActive="router-link-activate">
                     <i class="fa-solid fa-user-plus"></i> Registro
                 </a>
             </li>
             <li *ngIf="isLoggedIn" class="nav-item">
                 <a style="cursor: pointer" class="nav-link" (click)="logout()">
-                    <i class="fas fa-user-times"></i> Salir
+                    <i class="fa-solid fa-right-from-bracket"></i> Salir
                 </a>
             </li>
         </ul>

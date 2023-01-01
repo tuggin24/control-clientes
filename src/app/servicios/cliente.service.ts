@@ -30,21 +30,17 @@ export class ClienteService {
     this.clientesColeccion.add(cliente);
   }
 
-  getcliente(id:string){
+  getcliente(id:string): Observable<Cliente>{
     this.clienteDoc = this.db.doc<Cliente>(`clientes/${id}`);
     this.cliente = this.clienteDoc.snapshotChanges().pipe(
       map(
         accion =>{
           if(accion.payload.exists === false){
-            return {nombre:'',
-            apellido:'',
-            email:'',
-            saldo: 0
-          };
+            return null;
           }else{
             const datos = accion.payload.data() as Cliente;
             datos.id = accion.payload.id;
-            return datos;
+            return datos as any;
           }
         }
       )
